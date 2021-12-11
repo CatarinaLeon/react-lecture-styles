@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
-// import './NavItem.scss'
+import './NavItem.scss';
 
 const NavItem = ({ name, icon }) => {
   // console.log(props);
-  const isActive = true;
+  const isActive = false;
 
   const navItemStyles = ['NavItem'];
   isActive && navItemStyles.push('NavItemActive');
@@ -15,7 +15,6 @@ const NavItem = ({ name, icon }) => {
       <a className="itemName" href="/">
         {name}
       </a>
-      ;
     </div>
   );
 };

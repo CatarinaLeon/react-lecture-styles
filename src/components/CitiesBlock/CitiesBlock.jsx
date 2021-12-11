@@ -5,6 +5,7 @@ import BigButton from '../common/BigButton/BigButton';
 import addIcon from '../../images/add.svg';
 
 const CitiesBlock = ({ cities }) => {
+  // console.log(cities);
   return (
     <div>
       <CitiesList cities={cities} />

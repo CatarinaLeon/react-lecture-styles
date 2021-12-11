@@ -1,25 +1,65 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
+
 import PropTypes from 'prop-types';
+import { ReactComponent as PhoneIcon } from 'images/phone.svg';
+import { ReactComponent as MailIcon } from 'images/mail.svg';
+import { ReactComponent as LocationIcon } from 'images/location.svg';
+
+/**
+ * Добавим коммент из документации
+ * Перепишем scss стили в переменные
+ * blockStyles, nameStyles, dataStyles, dataTextStyles
+ * в стиле объекта
+ * Переменные используем в пропах css соответствующих элементов
+ */
+
+const blockStyles = {
+  display: 'flex',
+  padding: 14,
+  fontSize: 16,
+  lineHeight: 1.5,
+};
+
+const nameStyles = {
+  paddingRight: 24,
+  flex: '0 0 200px',
+};
+
+const dataStyles = {
+  ...nameStyles,
+  flexBasis: 300,
+};
+
+const dataTextStyles = {
+  display: 'flex',
+  alignItems: 'center',
+  '& .text': {
+    marginLeft: 8,
+  },
+};
 
 const Tutor = props => {
   const { firstName, lastName, patronymic, phone, email, city, options } =
     props;
   return (
-    <div>
-      <div>
+    <div css={blockStyles}>
+      <div css={nameStyles}>
         <p>{lastName}</p>
         <p>{firstName}</p>
         <p>{patronymic}</p>
       </div>
-      <div>
-        <p>
-          <span>{phone}</span>
+      <div css={dataStyles}>
+        <p css={dataTextStyles}>
+          <PhoneIcon />
+          <span className="text">{phone}</span>
         </p>
-        <p>
-          <span>{email}</span>
+        <p css={dataTextStyles}>
+          <MailIcon />
+          <span className="text">{email}</span>
         </p>
-        <p>
-          <span>{city}</span>
+        <p css={dataTextStyles}>
+          <LocationIcon />
+          <span className="text">{city}</span>
         </p>
       </div>
       <div>
