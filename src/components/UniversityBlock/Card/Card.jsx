@@ -4,17 +4,19 @@ import univerBuilding from '../../../images/building.png';
 import { ReactComponent as EditIcon } from '../../../images/edit.svg';
 import { ReactComponent as DelitIcon } from '../../../images/delete.svg';
 
+import s from './Card.module.css';
+
 const Card = ({ name }) => {
   // const isAdmin = true;         Для закоментированого условия ниже
+  const isAdmin = true;
   return (
-    <div>
-      Card
-      <div>
+    <div className={s.card}>
+      <div className={s.ingWrapper}>
         <img src={univerBuilding} alt="University" />
       </div>
-      <p>университет</p>
-      <h3>{name}</h3>
-      <div>
+      <p className={s.text}>университет</p>
+      <h3 className={`heading ${s.wrapper}`}>{name}</h3>
+      <div className={s.btn_container}>
         {/* {isAdmin && (<button>
                     <EditIcon />
                 </button>)}
@@ -31,11 +33,15 @@ const Card = ({ name }) => {
                     <DelitIcon />
                 </button>)} */}
 
-        <button>
+        <button
+          disabled={!isAdmin}
+          className={isAdmin ? s.active : s.disabled}
+          aria-label="Delete"
+        >
           <DelitIcon />
         </button>
 
-        <button>
+        <button className={s.active} aria-label="Edit">
           <EditIcon />
         </button>
       </div>

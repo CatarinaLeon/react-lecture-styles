@@ -11,11 +11,13 @@ import tutorsIcon from '../../images/cat.png';
 import citiesIcon from '../../images/pin.png';
 import departmentsIcon from '../../images/robot.png';
 
+import s from './Main.module.css';
+
 const { name, description, tutors, cities, departments } = univerInfo;
 
 const Main = () => {
   return (
-    <main>
+    <main className={s.main}>
       <Header title="Информация о университете" />
 
       <UniversityBlock name={name} descr={description} />

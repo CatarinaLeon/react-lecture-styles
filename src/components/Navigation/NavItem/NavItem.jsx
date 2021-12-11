@@ -1,12 +1,28 @@
 import PropTypes from 'prop-types';
 
-const NavItem = ({ name }) => {
+// import './NavItem.scss'
+
+const NavItem = ({ name, icon }) => {
   // console.log(props);
-  return <a href="/">{name}</a>;
+  const isActive = true;
+
+  const navItemStyles = ['NavItem'];
+  isActive && navItemStyles.push('NavItemActive');
+
+  return (
+    <div className={navItemStyles.join(' ')}>
+      <span className="iconWrapper">{icon}</span>
+      <a className="itemName" href="/">
+        {name}
+      </a>
+      ;
+    </div>
+  );
 };
 
 NavItem.propTypes = {
   name: PropTypes.string.isRequired,
+  icon: PropTypes.object.isRequired,
 };
 
 export default NavItem;
