@@ -1,4 +1,6 @@
-## Стилизация компонентов
+# Занятие №2
+
+## Стилизация компонентов (Прдолжаем работать с кодом из первого занятия)
 
 ### Подготовка
 
@@ -68,8 +70,3 @@ Tutor, BigButton, CitiesList, DepartmentsList)
 
 - устанавливаем библиотеку и в нужных файлах
   [прописываем коммент](https://emotion.sh/docs/css-prop#jsx-pragma)
-
-Для sass(scss) инсталировать -> npm install node-sass --save или npm i
-node-sass@6.0.0
-
-Инлайновый стиль в папке Navigation style={{paddingTop: 12}}
